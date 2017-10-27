@@ -1,0 +1,32 @@
+﻿@bgColor:#f2f2f2;
+@aColor:#3c3535;
+@hoverColor:#3c3535;
+@color:#453d3d;
+@font:"微软雅黑",Microsoft YaHei;
+html{
+	font-size:625%;
+  -ms-touch-action: none;/*去除ie默认触屏动作*/
+  -webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;/*兼容iphone横屏字放大及谷歌可以设置小于12px大小字体*/
+}
+body,footer,nav,header,main,section,article,h1,h2,h3,h4,h5,ul,li,p,div,dl,dt,dd,form,table,tr,td,span,a,em,i,strong,b,input,button,select,option,textarea,label{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+textarea,input,button,select,option{ font-family:@font; font-size:12px;}
+textarea{resize: none;}
+i,em{ font-style: normal;}
+img{ border: 0 none; vertical-align: top;}
+li{ list-style: none;}
+a{ text-decoration: none; color:@aColor;}
+a:hover,a:visited{ color:@hoverColor;}
+body{ font-size:12px; color:@color; font-family: @font; background:@bgColor; min-width: 320px; max-width: 640px; margin:0 auto;}
+.clearfix{*zoom:1;}
+.clearfix:after{ content: "."; display: block; visibility: hidden; clear: both; height: 0;}
+/*文本控件*/
+.Js-input{ display:flex; margin-bottom: 12/@fz;
+	label{ flex:1; line-height:40/@fz;}
+	input,select{ flex:3; padding:6/@fz; border:#d8d8d8 1px solid; line-height:40/@fz; height: 40/@fz;}
+}
