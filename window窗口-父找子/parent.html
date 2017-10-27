@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>parent</title>
+</head>
+<body>
+	<h1>parent</h1>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<input type="button" value="提交">
+	<ul>
+	</ul>
+	<iframe src="childA.html?v=1.0.2" frameborder="0"  width="800" height="500"></iframe>
+	<script>
+		window.name="parent";
+		
+		var textNode=document.getElementsByTagName("textarea")[0];
+		var inputNode=document.getElementsByTagName("input")[0];
+		var ulNode=document.getElementsByTagName("ul")[0];
+		var ifrNode=document.getElementsByTagName("iframe")[0];
+		
+		ifrNode.onload=function(){
+			var childWindow=ifrNode.contentWindow
+			var childUlNode=childWindow.document.getElementsByTagName("ul")[0]
+			var childTextNode=childWindow.document.getElementsByTagName("textarea")[0]
+			var childInputNode=childWindow.document.getElementsByTagName("input")[0];
+			
+			//父给子
+			var childLiNode=childWindow.document.createElement("li")
+			inputNode.onclick=function(){
+				var val=textNode.value;
+				childLiNode.innerHTML=val;
+				childUlNode.appendChild(childLiNode)	
+			}
+			//子给父
+			var liNode=document.createElement("li");
+			childInputNode.onclick=function(){
+				var childVal=childTextNode.value;
+				console.log(childVal)
+				liNode.innerHTML=childVal;
+				ulNode.appendChild(liNode)	
+			}
+		}
+	
+		
+		
+	</script>
+</body>
+</html>

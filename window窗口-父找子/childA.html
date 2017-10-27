@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>childA</title>
+</head>
+<body style="background: #f00;">
+	<h1>childA</h1>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<input type="button" value="提交">
+	<ul>
+	</ul>
+	<iframe src="childA-child.html?v=1.0.0" frameborder="0" width="600" height="300"></iframe>
+
+	<script>
+		window.name="childA";
+		
+	/*	var inputNode=document.getElementsByTagName("input")[0];
+		var textNode=document.getElementsByTagName("textarea")[0];
+		var parentUlNode=window.parent.document.getElementsByTagName("ul")[0];
+		
+		inputNode.onclick=function(){
+			var val=inputNode.value;
+			var liNode=document.createElement("li");
+			liNode.innerHTML=val;
+			parentUlNode.appendChild(liNode)
+			
+		}
+
+	</script>
+</body>
+</html>
